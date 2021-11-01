@@ -13,6 +13,8 @@
 		726DA79C272F9C4100D60F7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 726DA79A272F9C4100D60F7E /* Main.storyboard */; };
 		726DA79E272F9C4300D60F7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 726DA79D272F9C4300D60F7E /* Assets.xcassets */; };
 		726DA7A1272F9C4300D60F7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 726DA79F272F9C4300D60F7E /* LaunchScreen.storyboard */; };
+		726DA7AA272F9CBB00D60F7E /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726DA7A8272F9CBB00D60F7E /* WebViewViewController.swift */; };
+		726DA7AB272F9CBB00D60F7E /* WebViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 726DA7A9272F9CBB00D60F7E /* WebViewViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		726DA79D272F9C4300D60F7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		726DA7A0272F9C4300D60F7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		726DA7A2272F9C4300D60F7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		726DA7A8272F9CBB00D60F7E /* WebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
+		726DA7A9272F9CBB00D60F7E /* WebViewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebViewViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				726DA79D272F9C4300D60F7E /* Assets.xcassets */,
 				726DA79F272F9C4300D60F7E /* LaunchScreen.storyboard */,
 				726DA7A2272F9C4300D60F7E /* Info.plist */,
+				726DA7A8272F9CBB00D60F7E /* WebViewViewController.swift */,
+				726DA7A9272F9CBB00D60F7E /* WebViewViewController.xib */,
 			);
 			path = VKOAuth;
 			sourceTree = "<group>";
@@ -127,6 +133,7 @@
 			files = (
 				726DA7A1272F9C4300D60F7E /* LaunchScreen.storyboard in Resources */,
 				726DA79E272F9C4300D60F7E /* Assets.xcassets in Resources */,
+				726DA7AB272F9CBB00D60F7E /* WebViewViewController.xib in Resources */,
 				726DA79C272F9C4100D60F7E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,6 +147,7 @@
 			files = (
 				726DA799272F9C4100D60F7E /* ViewController.swift in Sources */,
 				726DA795272F9C4100D60F7E /* AppDelegate.swift in Sources */,
+				726DA7AA272F9CBB00D60F7E /* WebViewViewController.swift in Sources */,
 				726DA797272F9C4100D60F7E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

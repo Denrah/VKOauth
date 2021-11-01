@@ -6,24 +6,43 @@
 //
 
 import UIKit
+import WebKit
 
 class WebViewViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+  @IBOutlet weak var webView: WKWebView!
+  
+  var onDidReceiveToken: ((String?) -> Void)?
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    webView.navigationDelegate = self
+    
+    if let url = URL(string: "https://oauth.vk.com/authorize?client_id=7988922&response_type=token&redirect_uri=https://oauth.vk.com/blank.html") {
+      let request = URLRequest(url: url)
+      webView.load(request)
     }
+    
+    // Do any additional setup after loading the view.
+  }
+}
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension WebViewViewController: WKNavigationDelegate {
+  func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction,
+               decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+    guard let url = navigationAction.request.url else {
+      decisionHandler(.allow)
+      return
     }
-    */
-
+    if ((url.host ?? "") + url.path) == "oauth.vk.com/blank.html",
+       let newURL = URL(string: url.absoluteString.replacingOccurrences(of: "#", with: "?")) {
+      decisionHandler(.cancel)
+      let components = URLComponents(url: newURL, resolvingAgainstBaseURL: true)
+      let token = components?.queryItems?.first { $0.name == "access_token" }?.value
+      onDidReceiveToken?(token)
+      dismiss(animated: true, completion: nil)
+      return
+    }
+    decisionHandler(.allow)
+  }
 }
